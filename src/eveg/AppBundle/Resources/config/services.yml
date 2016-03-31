@@ -94,3 +94,10 @@ services:
         class:              eveg\AppBundle\Utils\Services\whatsUp
         arguments:          ['@sfile_repository', '@shttplink_repository', '@sphoto_repository']
 
+    eveg_app.nbItems:
+        class:              eveg\AppBundle\Utils\Services\nbEvegItems
+        arguments:          ['@score_repository', '@sfile_repository', '@shttplink_repository', '@sphoto_repository']
+
+    sitemap:
+        class:              eveg\AppBundle\Utils\Services\sitemap
+        arguments:          ['@router', '@doctrine.orm.entity_manager']
